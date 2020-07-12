@@ -1,24 +1,35 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## imagesテーブル
 
-Things you may want to cover:
+|Culumn|Type|Option|
+|------|----|-------|
+|url|string|null: fallse|
 
-* Ruby version
+### Association
+- has_many :images-tags
+- has_many :tags, through: images_tags
 
-* System dependencies
 
-* Configuration
+## tagsテーブル
 
-* Database creation
+|Culumn|Type|Option|
+|------|----|-------|
+|name|string||
 
-* Database initialization
+### Association
+- has_many :images-tags
+- has_many :images, through: images_tags
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## images_tagsテーブル
 
-* Deployment instructions
+|Culumn|Type|Option|
+|------|----|-------|
+|image-id|reference|null: fallse, foreign_key: true|
+|tag-id|references|null: fallse, foreign_key: true|
 
-* ...
+### Association
+- belongs_to :image
+- belongs_to :tag
+
