@@ -1,35 +1,47 @@
 # README
 
+## informationsテーブル
+
+|Culumn|Type|Option|
+|------|----|-------|
+|cotent|text|null: fallse|
+
+### Association
+- has_many :images
+- has_many :informations_categorys
+- has_many :categorys, through: informations_categorys
+
+
 ## imagesテーブル
 
 |Culumn|Type|Option|
 |------|----|-------|
 |url|string|null: fallse|
+|information-id|reference|null: fallse, foreign_key: true|
 
 ### Association
-- has_many :images-tags
-- has_many :tags, through: images_tags
+- belongs_to :information
 
 
-## tagsテーブル
+## categorysテーブル
 
 |Culumn|Type|Option|
 |------|----|-------|
 |name|string||
 
 ### Association
-- has_many :images-tags
-- has_many :images, through: images_tags
+- has_many :informations_categorys
+- has_many :informations, through: informations_categorys
 
 
-## images_tagsテーブル
+## informations_categorysテーブル
 
 |Culumn|Type|Option|
 |------|----|-------|
-|image-id|reference|null: fallse, foreign_key: true|
-|tag-id|references|null: fallse, foreign_key: true|
+|information-id|reference|null: fallse, foreign_key: true|
+|category-id|references|null: fallse, foreign_key: true|
 
 ### Association
-- belongs_to :image
-- belongs_to :tag
+- belongs_to :information
+- belongs_to :category
 
