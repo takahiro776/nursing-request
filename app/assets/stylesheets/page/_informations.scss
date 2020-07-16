@@ -1,0 +1,41 @@
+.wrapper{
+  background-color: $color-bg;
+}
+.request{
+  margin: 0 auto;
+  width: 90%;
+  &__text{
+    background-color: #fff;
+    border: 1px solid $color-border;
+    height: 60px;
+  }
+
+  &__option{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    &__image{
+      @include option;
+    }
+    &__category{
+      @include option;
+    }
+    &__remind{
+      @include option;
+    }
+  }
+
+  &__SendBtn{
+    margin-top: 10px;
+    padding: 10px 0;
+    text-align: center;
+    background-color: $color-main;
+    color: #fff;
+    font-size: 15px;
+  }
+
+
+
+
+}
