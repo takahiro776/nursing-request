@@ -1,0 +1,14 @@
+.header{
+  background-color: $color-bg;
+  margin-bottom: 10px;
+  &__list{
+    display: flex;
+    overflow: scroll;
+    text-align: center;
+    &__item{
+      flex-shrink: 0;
+      width: 25%;
+      padding: 10px 0;
+    }
+  }
+}
