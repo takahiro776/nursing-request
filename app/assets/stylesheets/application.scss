@@ -1,3 +1,4 @@
-@import "reset";
-@import "modules/informations.scss";
-@import "modules/categorys.scss"
+@import "mixin/mixin";
+@import "base/*";
+@import "page/categorys";
+@import "page/informations"
