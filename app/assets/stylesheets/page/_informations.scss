@@ -20,7 +20,7 @@
     margin-top: 10px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    // justify-content: space-between;
     &__image{
       @include option;
     }
@@ -37,8 +37,10 @@
     padding: 10px 0;
     text-align: center;
     background-color: $color-main;
-    color: #fff;
-    font-size: 15px;
+    input{
+      color: #fff;
+      font-size: 15px;
+    }
   }
 }
 
