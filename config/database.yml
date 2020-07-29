@@ -49,6 +49,8 @@ test:
 #
 production:
   <<: *default
-  database: nursing-request_production
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   username: nursing-request
   password: <%= ENV['NURSING-REQUEST_DATABASE_PASSWORD'] %>
