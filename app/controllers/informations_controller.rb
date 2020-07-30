@@ -4,7 +4,7 @@ class InformationsController < ApplicationController
 
   def new
     @information = Information.new
-    # binding.pry
+    @information.images.new
   end
 
   def create
@@ -12,12 +12,12 @@ class InformationsController < ApplicationController
     if @information.save
       redirect_to root_path, notice: "送信が完了しました"
     else
-      render :new
+      render :new, notice: "送信に失敗しました"
     end
   end
 
   private
   def info_params
-    params.require(:information).permit(:content)
+    params.require(:information).permit(:content, images_attributes: [:url])
   end
 end

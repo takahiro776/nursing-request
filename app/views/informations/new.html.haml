@@ -3,13 +3,14 @@
 .wrapper
   .request
     = @information.content
-    = form_with model:@information, url: {controller: 'informations', action: 'create' } do |form|
+    = form_with model: [@information], url: {controller: 'informations', action: 'create' } do |form|
       .request__text
         = form.text_area :content, placeholder: "テキスト入力欄"
 
       .request__option
         .request__option__image
-          = form.file_field :image
+          = form.fields_for :images do |i|
+            = i.file_field :url
         -# .request__option__image
         -#   画像
         .request__option__category
