@@ -1,5 +1,6 @@
 class InformationsController < ApplicationController
   def index
+    @informations = Information.includes(:images).all
   end
 
   def new

@@ -12,9 +12,7 @@
     .information__category__item
       業務連絡
   .information__text
-    ほにゃららほにゃららほにゃららほにゃららほにゃらら
+    = information.content
   .information__image
-    .information__image__item
-      画像が入る
-    .information__image__item
-      画像が入る
+    - information.images.each do |image|
+      = image_tag "#{image.url}", class: 'information__image__item' if image.present?

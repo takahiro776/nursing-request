@@ -1,4 +1,5 @@
 = render partial: 'modules/header'
 
 .wrapper
-  = render partial: 'info-item'
+  - @informations.each do |information|
+    = render partial: 'info-item', locals: { information: information}
