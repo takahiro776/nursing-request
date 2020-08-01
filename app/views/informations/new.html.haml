@@ -8,9 +8,13 @@
         = form.text_area :content, placeholder: "テキスト入力欄"
 
       .request__option
-        .request__option__image
+        .request__option__image#image-box
           = form.fields_for :images do |i|
-            = i.file_field :url
+            .js-file_group{"data-index" => "#{i.index}"}
+              = i.file_field :url, class: 'js-file'
+              %br
+              %span.js-remove
+                削除
         -# .request__option__image
         -#   画像
         .request__option__category
