@@ -105,3 +105,14 @@
     }
   }
 }
+
+.js-remove{
+  display: block;
+  width: 20%;
+  margin-right: auto;
+  border: solid 1px $color-border;
+  font-size: small;
+  &:hover{
+    cursor: pointer;
+  }
+}
