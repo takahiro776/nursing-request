@@ -19,6 +19,6 @@ class InformationsController < ApplicationController
 
   private
   def info_params
-    params.require(:information).permit(:content, images_attributes: [:url])
+    params.require(:information).permit(:content,  category_ids: [], images_attributes: [:url])
   end
 end
