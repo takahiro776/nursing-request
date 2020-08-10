@@ -1,6 +1,7 @@
 class InformationsController < ApplicationController
   def index
     @informations = Information.includes(:images).all.order(id: "DESC")
+    @categories = Category.all
   end
 
   def new

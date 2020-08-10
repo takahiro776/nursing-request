@@ -1,0 +1,5 @@
+= render partial: 'modules/header'
+
+.wrapper
+  - @category_items.each do |category|
+    = render partial: 'informations/info-item', locals: { information: category}

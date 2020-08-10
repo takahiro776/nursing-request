@@ -9,6 +9,9 @@
       flex-shrink: 0;
       width: 25%;
       padding: 10px 0;
+      &:first-child{
+        font-size: 17px;
+      }
     }
   }
 }
