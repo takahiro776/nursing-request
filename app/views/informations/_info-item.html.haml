@@ -10,4 +10,5 @@
     = information.content
   .information__image
     - information.images.each do |image|
-      = image_tag "#{image.url}", class: 'information__image__item' if image.present?
+      = link_to "#{image.url}", 'data-lightbox': image do
+        = image_tag "#{image.url}", class: 'information__image__item' if image.present?
