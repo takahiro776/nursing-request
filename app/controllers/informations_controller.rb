@@ -1,7 +1,8 @@
 class InformationsController < ApplicationController
+  before_action :set_category
+  
   def index
     @informations = Information.includes(:images).all.order(id: "DESC")
-    @categories = Category.all
   end
 
   def new
@@ -21,5 +22,9 @@ class InformationsController < ApplicationController
   private
   def info_params
     params.require(:information).permit(:content,  category_ids: [], images_attributes: [:url])
+  end
+
+  def set_category
+    @categories = Category.all
   end
 end
