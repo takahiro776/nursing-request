@@ -1,0 +1,5 @@
+SetEnvIf X-Forwarded-For 192.168.100.1 allowip
+
+order deny,allow
+deny  from all
+allow from env=allowip
