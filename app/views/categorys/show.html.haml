@@ -3,3 +3,5 @@
 .wrapper
   - @category_items.each do |category|
     = render partial: 'informations/info-item', locals: { information: category}
+  
+  = link_to "投稿する", new_information_path, class: "PostBtn"

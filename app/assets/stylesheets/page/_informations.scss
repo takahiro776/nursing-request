@@ -106,6 +106,21 @@
   }
 }
 
+.PostBtn{
+  position: fixed;
+  bottom: 60px;
+  right: 5%;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  font-size: 20px;
+  color: #fff;
+  background-color: $color-main;
+  border-radius: 50%;
+}
+
 .js-remove{
   display: block;
   width: 20%;
