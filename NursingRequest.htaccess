@@ -1,8 +1,0 @@
-<Files ~ "^\.(htaccess|htpasswd)$">
-SetEnvIf X-FORWARDED-FOR 192.168.100.1 denyIP
-deny from all
-</Files>
-order deny,allow
-deny from env=denyIP
-
-
