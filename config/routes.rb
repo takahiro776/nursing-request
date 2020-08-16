@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   
   resources :informations, only:[:new, :create]
   resources :categorys, only:[:index, :show]
+  resources :exclusions, only:[:index]
 
 end

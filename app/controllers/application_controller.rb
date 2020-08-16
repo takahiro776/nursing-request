@@ -1,7 +1,16 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth
+  before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+ # 各アクションで権限をチェック
+  authorize_resource :class => false
+
+  # 権限が無いページへアクセス時の例外処理
+  rescue_from CanCan::AccessDenied do |exception|
+    # root_urlにかっ飛ばす。
+    redirect_to exclusions_path
+  end
 
   protected
 
