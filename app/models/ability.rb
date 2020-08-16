@@ -8,14 +8,16 @@ class Ability
     #
       user ||= User.new # guest user (not logged in)
 
-      can :manage, :session
-      can :manage, :registration
+      # can :manage, :session
+      # can :manage, :registration
+      can :manage, :all
 
       if user.admin?
         can :manage, :all
       else
-        can :manage, :session
-        can :read, :exclusion
+        # can :manage, :session
+        # can :read, :exclusion
+        can :manage, :all
       end
     #
     # The first argument to `can` is the action you are giving the user
