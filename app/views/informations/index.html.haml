@@ -3,5 +3,5 @@
 .wrapper
   - @informations.each do |information|
     = render partial: 'info-item', locals: { information: information}  
-  
+
   = link_to "投稿する", new_information_path, class: "PostBtn"

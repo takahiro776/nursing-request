@@ -31,13 +31,26 @@
   &__option{
     margin-top: 10px;
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    flex-wrap: wrap;
     // justify-content: space-between;
     &__image{
       @include option;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 50%;
+      @include mq('sp') {
+        width: 100%;
+      }
     }
     &__category{
       @include option;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      width: 50%;
+      @include mq('sp') {
+        width: 100%;
+      }
     }
     &__remind{
       @include option;
@@ -45,6 +58,7 @@
   }
 
   &__SendBtn{
+    display: block;
     margin-top: 10px;
     padding: 10px 0;
     text-align: center;
@@ -90,7 +104,6 @@
   }
 
   &__text{
-    height: 80px;
     border: 1px solid $color-border;
     margin-bottom: 5px;
   }
@@ -119,6 +132,12 @@
   color: #fff;
   background-color: $color-main;
   border-radius: 50%;
+  @include mq('sp') {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 15px;
+  }
 }
 
 .js-remove{

@@ -4,3 +4,12 @@
   text-align: center;
   background-color: #fff;
 }
+
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+
+  @media #{map-get($breakpoints, $breakpoint)} {
+
+    @content;
+  }
+}

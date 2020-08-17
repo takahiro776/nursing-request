@@ -19,7 +19,7 @@
         -#   画像
         .request__option__category
           = form.collection_check_boxes(:category_ids, Category.all, :id, :name)
-        .request__option__remind
-          リマインド
-      .request__SendBtn
+        -# .request__option__remind
+        -#   リマインド
+      %label.request__SendBtn
         = form.submit "送信する"
